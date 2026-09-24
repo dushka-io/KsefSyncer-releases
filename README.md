@@ -14,5 +14,6 @@ kod źródłowy jest w osobnym repozytorium. Z tego repozytorium serwery pobiera
 - Wydań się nie kasuje: `KsefSender.exe update --to <wersja>` pozwala wrócić do każdej opublikowanej wersji.
 
 Wydania tworzy workflow `release.yml` w repozytorium z kodem (po wypchnięciu tagu `v<wersja>`) albo ręcznie `gh release create`.
-Repozytorium jest prywatne: serwer potrzebuje `Update.Token` (fine-grained PAT z prawem *Contents: read* wyłącznie do tego repozytorium),
-wpisanego w `appsettings.local.json`.
+Repozytorium jest **publiczne** (decyzja właściciela 2026-09-24): serwery nie potrzebują żadnego tokena, a paczka nie zawiera sekretów.
+Kod źródłowy aplikacji pozostaje w prywatnym repozytorium. Gdyby to repozytorium kiedyś stało się prywatne, serwery potrzebowałyby
+`Update.Token` (fine-grained PAT z prawem *Contents: read* wyłącznie do tego repozytorium) w `appsettings.local.json`.
